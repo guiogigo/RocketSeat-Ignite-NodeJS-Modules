@@ -1,0 +1,77 @@
+
+É uma linguagem de programação que complementa o JS e o seu principal ponto é que o TS é fortemente tipado
+
+> npm i -D typescript
+> npm i -D @types/node
+> npm i -D tsx //Converte o ts para o js automaticamente
+> npx tsc --init
+
+> npm i fastify
+
+EsLint é um preset de configurações para padronizar o código
+
+> npm i eslint @rocketseat/eslint-config -D
+
+------------------------------------------------
+
+Bancos relacionais
+SQLite => Banco de Dados relacional
+
+Knex => Query Builder
+    Facilita a escrita das querys com o código JS
+
+Migrations => Controle de versão
+
+Variaveis de Ambiente:
+    - Ambiente de desenvolvimento, de produção, de testing, de stage  
+    - ficam no .env
+    > npm i dotenv 
+
+Biblioteca que valida tipos de dados
+    > npm i zod
+
+------------------------------------------------
+
+#RF - Requisitos Funcionais
+    [x] O usuario deve poder criar uma nova transação
+    [x] O usuario deve poder obter um resumo da sua conta
+    [x] O usuário deve poder listar toads as transação que já ocorreram
+    [x] O usuário deve poder visualizar uma transação única
+
+#RN - Regra de Negocios
+    [x] A transação pode ser do tipo credito ou débito
+    [ ] Deve ser possivel identificarmos o usuário entre as requisições
+    [ ] O usuário só pode visualizar transações o qual ele criou
+
+#RNF - Requisitos Não Funcionais
+    
+------------------------------------------------
+
+- Cookies: São formas da gente manter contexto entre requisições
+> npm i @fastify/cookie
+
+------------------------------------------------
+
+- Testes Automatizados:
+    - Unitários: Testa uma unidade da aplicação
+    - Integração: Comunicação entre duas ou mais unidades
+    - e2e: Ponta a ponta, simulam um usuário operando na nossa aplicação
+
+    > Pirâmide de testes:
+        E2E (não dependem de nenhuma tecnologia nem arquitetura)
+
+    > Vitest => Framework de testes
+        > npm i vitest -D
+        > npx vitest
+
+    > Supertest => Fazer requisições sem colocar a aplicação no ar
+        > npm i supertest -D
+        > npm i -D @types/supertest
+
+ - Se um teste depende de outro eles deveriam ser o mesmo teste.
+
+ ------------------------------------------------
+
+ Deploy: 
+    - Configurar o TypeScript
+    > npm i tsup -D

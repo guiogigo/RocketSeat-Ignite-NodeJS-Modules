@@ -1,0 +1,62 @@
+
+- Criar usuários
+- Listagem de usuários
+- Edição de usuários
+- Remoção de usuários
+
+-HTTP
+    - Método HTTP 
+        GET => Buscar informação do back-end
+        POST => Criar uma informação no back-end
+        PUT => Atualizar uma informação no back-end
+        PATCH => Atualizar uma informação especifica do back-end
+        DELETE => Deletar uma informação do back-end
+    - URL
+
+-Stateful
+    > Salva informações em memória
+    Aplicação com informações guardadas localmente em memória
+-Stateless
+    > Não salva informações em memória
+    
+-JSON (JavaScript Object Notation)
+    Formato do javascript para passar dados em formato de string
+    > JSON é variável global do JS
+
+-Cabeçalhos da Resquisição
+    > Metadados
+    São informações adicionais que não tem ligação com o dado retornado do back-end
+    Levam informações de como os dados podem ser tradados no front-end
+    > Podem ser enviados do front pro back e vice-versa
+
+-HTTP Status Code
+    > Informativos (100 - 199)
+    > Sucesso (200 - 299)
+    > Redirecionamento (300 - 399)
+    > Erro do Client (400 - 499)
+    > Erro do Servidor (500 - 599)
+    < .writeHead(200) >
+
+-Buffers
+    São dados para serem manipulados dentro das streams do node
+
+-Middlewares
+    São interseptadores de funções
+    > Sempre recebem como parametros o req e o res
+
+-Query Parameters:
+    > Parametros nomeados no proprio endereço da Resquisição
+    ! Ex => http://localhost:3333/users?userId=1&name=Gui  
+    > Geralmente usada para passar parametros que não são sensiveis
+    > Usados para Filtros, Paginação e coisas não obrigatórias
+
+-Routes Parameters:
+    > São parametros não nomeados que também ficam no endereço
+    ! Ex => http://localhost:3333/users/1
+    > Usado para identificação de recurso
+    > Não é usado para informações sensíveis
+
+-Request Body:
+    > Usado para envio de informações sensíveis
+    > Passam pelo protocolo HTTPs (Seguro)
+    > Geralmente usado para envio de informações de formulário
