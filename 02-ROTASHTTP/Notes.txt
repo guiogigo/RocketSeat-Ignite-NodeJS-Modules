@@ -75,3 +75,5 @@ Biblioteca que valida tipos de dados
  Deploy: 
     - Configurar o TypeScript
     > npm i tsup -D
+    - No Render.com (só aceita Postgris)
+    > npm i pg
