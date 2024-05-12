@@ -1,19 +1,31 @@
 import fastify from 'fastify'
 // import cookie from '@fastify/cookie'
+import crypto from 'node:crypto'
 import { knex } from './database'
+import { env } from './env'
 
 const app = fastify()
 
 // app.register(cookie)
 
 app.get('/', async () => {
-  const tables = await knex('sqlite_schema').select('*')
-  return tables
+  const snack = await knex('snacks')
+    .insert({
+      id: crypto.randomUUID(),
+      user_id: crypto.randomUUID(),
+      name: 'Almoço',
+      description: 'Gostoso que só',
+      date: 'Hoje',
+      is_on_diet: true,
+    })
+    .returning('*')
+
+  return snack
 })
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
   })
   .then(() => {
     console.log('HTTP Server Running!')
