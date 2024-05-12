@@ -1,10 +1,9 @@
-import fastify from 'fastify'
 // import cookie from '@fastify/cookie'
 import crypto from 'node:crypto'
 import { knex } from './database'
-import { env } from './env'
 
-const app = fastify()
+import { env } from './env'
+import { app } from './app'
 
 // app.register(cookie)
 
