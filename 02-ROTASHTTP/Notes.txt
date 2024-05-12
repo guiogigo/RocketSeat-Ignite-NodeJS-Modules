@@ -11,6 +11,7 @@
 EsLint é um preset de configurações para padronizar o código
 
 > npm i eslint @rocketseat/eslint-config -D
+ - Criar o "lint": "eslint src --ext .ts --fix" no package.json
 
 ------------------------------------------------
 
@@ -18,9 +19,13 @@ Bancos relacionais
 SQLite => Banco de Dados relacional
 
 Knex => Query Builder
+	npm i knex sqlite3
     Facilita a escrita das querys com o código JS
 
 Migrations => Controle de versão
+	- Criar o "knex": "node --no-warnings --import tsx ./node_modules/knex/bin/cli.js" no package.json
+	- npm run knex -- -h (-h => Ajuda do knex)
+		
 
 Variaveis de Ambiente:
     - Ambiente de desenvolvimento, de produção, de testing, de stage  
