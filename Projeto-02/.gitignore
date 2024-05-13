@@ -1,6 +1,12 @@
 # Modulos do node
 node_modules
-db/app.db
+
+# Database
+db/*.db
 
 # Variáveis de ambiente
 .env
+.env.test
+
+# Build
+build

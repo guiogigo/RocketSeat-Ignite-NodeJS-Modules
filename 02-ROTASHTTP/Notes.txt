@@ -34,6 +34,9 @@ Variaveis de Ambiente:
 
 Biblioteca que valida tipos de dados
     > npm i zod
+	
+Definir tipos para os objetos das requisições
+	> @types/knex.d.ts => arquivo para definição de tipos
 
 ------------------------------------------------
 
@@ -80,5 +83,7 @@ Biblioteca que valida tipos de dados
  Deploy: 
     - Configurar o TypeScript
     > npm i tsup -D
+		- Criar "build": "tsup src --out-dir build" no package.json
+		- Criar um .eslintingore com a pasta build dentro
     - No Render.com (só aceita Postgris)
     > npm i pg
