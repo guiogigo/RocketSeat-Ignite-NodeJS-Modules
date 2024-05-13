@@ -19,7 +19,7 @@ Bancos relacionais
 SQLite => Banco de Dados relacional
 
 Knex => Query Builder
-	npm i knex sqlite3
+	npm i knex sqlite3 -D
     Facilita a escrita das querys com o código JS
 
 Migrations => Controle de versão
@@ -86,4 +86,12 @@ Definir tipos para os objetos das requisições
 		- Criar "build": "tsup src --out-dir build" no package.json
 		- Criar um .eslintingore com a pasta build dentro
     - No Render.com (só aceita Postgris)
-    > npm i pg
+    
+	
+ Para o deploy:
+	- Criar a database no render.com
+	- Criar DATABASE_CLIENT: z.enum(['sqlite', 'pg']),
+	> npm i pg
+	- Organizar a conecção com a database
+	- Colocar a engine do node >= 18 no package.json
+	
