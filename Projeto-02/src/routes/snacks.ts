@@ -124,7 +124,6 @@ export async function snacksRoutes(app: FastifyInstance) {
 
       const TotalSnacks = await await knex('snacks').where('user_id', user)
 
-      console.log(TotalSnacks)
       const TotalOnDiet = (
         await knex('snacks').where('user_id', user).andWhere('is_on_diet', true)
       ).length
