@@ -109,7 +109,7 @@ export async function snacksRoutes(app: FastifyInstance) {
         name,
         description,
         is_on_diet: isOnDiet,
-        date: date.getTime(),
+        date,
       })
 
       return response.status(204).send()
