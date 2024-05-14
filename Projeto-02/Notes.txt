@@ -94,4 +94,4 @@ Definir tipos para os objetos das requisições
 	> npm i pg
 	- Organizar a conecção com a database
 	- Colocar a engine do node >= 18 no package.json
-	- Colocar host: 'RENDER' in process.env ? `0.0.0.0` : `localhost`, no listen do app
+	

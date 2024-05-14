@@ -25,7 +25,7 @@ export async function snacksRoutes(app: FastifyInstance) {
         name,
         description,
         is_on_diet: isOnDiet,
-        date,
+        date: date.getTime(),
         user_id: request.user?.id,
       })
 
@@ -109,7 +109,7 @@ export async function snacksRoutes(app: FastifyInstance) {
         name,
         description,
         is_on_diet: isOnDiet,
-        date,
+        date: date.getTime(),
       })
 
       return response.status(204).send()
