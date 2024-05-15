@@ -50,6 +50,10 @@ GynPass Style App
     > npx prisma init
         - Inicia o prisma no projeto
     > npm i @prisma/client
+    > npm i bcryptjs
+        - Biblioteca mais comum para hash de senhas
+    > npm i @types/bcryptjs
+        - Suporte para typescript
     
 # Criar Scripts no package:
     "dev": "tsx watch src/server.ts" (Roda a aplicação)
