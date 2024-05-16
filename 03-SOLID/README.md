@@ -117,3 +117,12 @@ GynPass Style App
         - Para de rodar os containers ativos
     > docker compose down
         - Delete os containers criados
+
+# Repository Pattern
+
+## SOLID:
+    - S:
+    - O
+    - L
+    - I
+    - D => Dependency Inversion Principle
