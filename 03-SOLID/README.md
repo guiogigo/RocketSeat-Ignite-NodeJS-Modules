@@ -54,6 +54,9 @@ GynPass Style App
         - Biblioteca mais comum para hash de senhas
     > npm i @types/bcryptjs
         - Suporte para typescript
+    > npm i vitest vite-tsconfig-paths -D
+        - Vitest para os testes da aplicação
+        - vite-tsconfig-paths para o vitest entender os paths com @ no tsconfig
     
 # Criar Scripts no package:
     "dev": "tsx watch src/server.ts" (Roda a aplicação)
@@ -126,3 +129,6 @@ GynPass Style App
     - L
     - I
     - D => Dependency Inversion Principle
+
+## Sobre teste:
+    - Testes unitários precisam ser rápidos e não podem ter ligação direta com o banco de dados
