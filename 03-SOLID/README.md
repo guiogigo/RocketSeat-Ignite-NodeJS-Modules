@@ -4,7 +4,7 @@ GynPass Style App
 
 ## RFs (Requisitos Funcionais)
 
-- [ ] Deve ser possível se cadastrar;
+- [x] Deve ser possível se cadastrar;
 - [ ] Deve ser possível se autenticar;
 - [ ] Deve ser possível obter o perfil de um usuário logado;
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
@@ -17,7 +17,7 @@ GynPass Style App
 
 ## RNs (Regras de negócio)
 
-- [ ] O usuário não deve poder se cadastrar com um e-mail duplicado;
+- [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [ ] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [ ] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
 - [ ] O check-in só pode ser validado até 20 minutos após criado;
@@ -26,8 +26,8 @@ GynPass Style App
 
 ## RNFs (Requisitos não-funcionais)
 
-- [ ] A senha do usuário precisa estar criptografada;
-- [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
+- [x] A senha do usuário precisa estar criptografada;
+- [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [ ] Todas listas de dados precisam estar paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token);
 
@@ -57,6 +57,7 @@ GynPass Style App
     > npm i vitest vite-tsconfig-paths -D
         - Vitest para os testes da aplicação
         - vite-tsconfig-paths para o vitest entender os paths com @ no tsconfig
+    > npm i vitest/coverage-c8 -D
     
 # Criar Scripts no package:
     "dev": "tsx watch src/server.ts" (Roda a aplicação)
@@ -132,3 +133,4 @@ GynPass Style App
 
 ## Sobre teste:
     - Testes unitários precisam ser rápidos e não podem ter ligação direta com o banco de dados
+    - InMemoryTestDatabase => Pattern de testes da aplicação
