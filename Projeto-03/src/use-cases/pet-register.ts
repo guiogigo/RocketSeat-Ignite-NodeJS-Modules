@@ -8,7 +8,8 @@ interface CreatePetUseCaseRequest {
   age: string;
   size: string;
   about: string;
-  local: string;
+  energy_level: string;
+  environment: string;
   org_Id: string;
 }
 
@@ -27,7 +28,8 @@ export class PetRegisterUseCase {
     age,
     size,
     about,
-    local,
+    energy_level,
+    environment,
     org_Id,
   }: CreatePetUseCaseRequest): Promise<CreatePetUseCaseResponse> {
     const org = await this.orgRepository.findById(org_Id);
@@ -41,7 +43,8 @@ export class PetRegisterUseCase {
       age,
       size,
       about,
-      local,
+      energy_level,
+      environment,
       org_Id,
     });
 

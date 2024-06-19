@@ -1,6 +1,7 @@
 import { ORG, Prisma } from "@prisma/client";
-import { ORGRepository } from "../org-repository";
+import { FindManyNeabyParams, ORGRepository } from "../org-repository";
 import { randomUUID } from "node:crypto";
+import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-cordinates";
 
 export class InMemoryOrgRepository implements ORGRepository {
   public items: ORG[] = [];
@@ -18,6 +19,8 @@ export class InMemoryOrgRepository implements ORGRepository {
       city: data.city,
       neighborhood: data.neighborhood,
       street: data.street,
+      latitude: new Prisma.Decimal(data.latitude.toString()),
+      longitude: new Prisma.Decimal(data.longitude.toString()),
 
       created_at: new Date(),
       updated_at: new Date(),
@@ -41,5 +44,21 @@ export class InMemoryOrgRepository implements ORGRepository {
       return null;
     }
     return org;
+  }
+
+  async findManyNearby(params: FindManyNeabyParams) {
+    return this.items.filter((item) => {
+      const distance = getDistanceBetweenCoordinates(
+        {
+          latitude: params.latitude,
+          longitude: params.longitude,
+        },
+        {
+          latitude: item.latitude.toNumber(),
+          longitude: item.longitude.toNumber(),
+        },
+      );
+      return distance < 10; // Menos 10Km
+    });
   }
 }

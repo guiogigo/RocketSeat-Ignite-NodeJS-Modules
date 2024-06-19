@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { ORGRepository } from "../org-repository";
+import { FindManyNeabyParams, ORGRepository } from "../org-repository";
 import { prisma } from "@/lib/prisma";
 
 export class PrismaORGsRepository implements ORGRepository {
@@ -25,5 +25,12 @@ export class PrismaORGsRepository implements ORGRepository {
     });
 
     return user;
+  }
+
+  async findManyNearby(params: FindManyNeabyParams) {
+    if (params) {
+      return null;
+    }
+    return null;
   }
 }

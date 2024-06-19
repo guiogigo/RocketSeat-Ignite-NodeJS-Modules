@@ -14,12 +14,13 @@ datasource db {
 }
 
 model Pet {
-  id    String @id @default(uuid())
-  name  String
-  age   String
-  size  String
-  about String
-  local String
+  id           String @id @default(uuid())
+  name         String
+  age          String
+  size         String
+  about        String
+  energy_level String
+  environment  String
 
   ORG    ORG    @relation(fields: [org_Id], references: [id])
   org_Id String
@@ -42,6 +43,9 @@ model ORG {
   city         String
   neighborhood String
   street       String
+
+  latitude  Decimal
+  longitude Decimal
 
   pets Pet[]
 

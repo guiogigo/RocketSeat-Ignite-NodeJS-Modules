@@ -24,6 +24,8 @@ describe("Create Org Use Case", () => {
       state: "Ceara",
       street: "Coronel PP",
       neighborhood: "Center",
+      latitude: 0,
+      longitude: 0,
     });
 
     expect(org.id).toEqual(expect.any(String));
@@ -40,6 +42,8 @@ describe("Create Org Use Case", () => {
       state: "Ceara",
       street: "Coronel PP",
       neighborhood: "Center",
+      latitude: 0,
+      longitude: 0,
     });
 
     const isPasswordCorrectlyHashed = await compare("123456", org.password);
@@ -59,6 +63,8 @@ describe("Create Org Use Case", () => {
       state: "Ceara",
       street: "Coronel PP",
       neighborhood: "Center",
+      latitude: 0,
+      longitude: 0,
     });
 
     await expect(() =>
@@ -72,6 +78,8 @@ describe("Create Org Use Case", () => {
         state: "Ceara",
         street: "Coronel PP",
         neighborhood: "Center",
+        latitude: 0,
+        longitude: 0,
       }),
     ).rejects.toBeInstanceOf(OrgAlreadyExists);
   });

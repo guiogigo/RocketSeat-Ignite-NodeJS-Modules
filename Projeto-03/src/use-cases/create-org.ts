@@ -13,6 +13,8 @@ interface CreateORGUseCaseRequest {
   city: string;
   neighborhood: string;
   street: string;
+  latitude: number;
+  longitude: number;
 }
 
 interface CreateORGUseCaseResponse {
@@ -32,6 +34,8 @@ export class CreateORGUserCase {
     city,
     neighborhood,
     street,
+    latitude,
+    longitude,
   }: CreateORGUseCaseRequest): Promise<CreateORGUseCaseResponse> {
     const password_hash = await hash(password, 6);
 
@@ -50,6 +54,8 @@ export class CreateORGUserCase {
       city,
       neighborhood,
       street,
+      latitude,
+      longitude,
     });
 
     return { org };

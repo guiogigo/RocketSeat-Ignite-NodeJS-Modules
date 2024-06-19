@@ -1,18 +1,16 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { PetRegisterUseCase } from "./pet-register";
-import { PetRepository } from "@/repositories/pet-repository";
 import { InMemoryPetRepository } from "@/repositories/in-memory/in-memory-pet-repository";
-import { ORGRepository } from "@/repositories/org-repository";
 import { InMemoryOrgRepository } from "@/repositories/in-memory/in-memory-org-repository";
 
-let orgRepository: ORGRepository;
-let petRepository: PetRepository;
+let orgRepository: InMemoryOrgRepository;
+let petRepository: InMemoryPetRepository;
 let sut: PetRegisterUseCase;
 
 describe("Create Pet Use Case", () => {
   beforeEach(async () => {
     orgRepository = new InMemoryOrgRepository();
-    petRepository = new InMemoryPetRepository();
+    petRepository = new InMemoryPetRepository(orgRepository);
     sut = new PetRegisterUseCase(petRepository, orgRepository);
 
     await orgRepository.create({
@@ -26,6 +24,8 @@ describe("Create Pet Use Case", () => {
       state: "Ceara",
       street: "Coronel PP",
       neighborhood: "Center",
+      latitude: 0,
+      longitude: 0,
     });
   });
 
@@ -35,7 +35,8 @@ describe("Create Pet Use Case", () => {
       age: "5",
       size: "12.2",
       about: "Fofo",
-      local: "ORG",
+      energy_level: "5",
+      environment: "city",
       org_Id: "ORG-Teste",
     });
 
