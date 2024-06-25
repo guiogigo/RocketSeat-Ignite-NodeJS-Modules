@@ -115,6 +115,7 @@ GynPass Style App
     > docker rm [nome]
         - Apaga o docker
     - Criar um dockercompose para guiar a criação dos containers da aplicação
+    - Após executar os comandos de compose é importante usar o npx prisma migrate dev para rodar todas as migrations no container
     > docker compose up -d
         - Roda o compose para criação dos containers
         - -d significa que ele não ficará exibindo os logs
