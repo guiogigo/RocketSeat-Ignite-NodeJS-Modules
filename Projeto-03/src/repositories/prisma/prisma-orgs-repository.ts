@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { ORG, Prisma } from "@prisma/client";
 import { FindManyNeabyParams, ORGRepository } from "../org-repository";
 import { prisma } from "@/lib/prisma";
 
@@ -27,10 +27,11 @@ export class PrismaORGsRepository implements ORGRepository {
     return user;
   }
 
-  async findManyNearby(params: FindManyNeabyParams) {
-    if (params) {
-      return null;
-    }
-    return null;
+  async findManyNearby({ latitude, longitude }: FindManyNeabyParams) {
+    const orgs = await prisma.$queryRaw<ORG[]>`
+    WHERE ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( latitude ) ) ) ) <= 10
+    `;
+
+    return orgs;
   }
 }
