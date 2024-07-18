@@ -59,7 +59,12 @@ GynPass Style App
         - vite-tsconfig-paths para o vitest entender os paths com @ no tsconfig
     > npm i vitest/coverage-c8 -D
     > npm i dayjs
-    
+    > npm i -D npm-run-all
+        - Rodas comandos dentro do package
+    > npm i supertest -D
+        - Biblioteca para fazer chamadas http sem precisar colocar a aplicação no ar
+    > npm i @types/supertest -D
+
 # Criar Scripts no package:
     "dev": "tsx watch src/server.ts" (Roda a aplicação)
     "build": "tsup src --out-dir build" (Cria a build)
