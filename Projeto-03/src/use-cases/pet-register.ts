@@ -23,7 +23,7 @@ export class PetRegisterUseCase {
     private orgRepository: ORGRepository,
   ) {}
 
-  async excute({
+  async execute({
     name,
     age,
     size,

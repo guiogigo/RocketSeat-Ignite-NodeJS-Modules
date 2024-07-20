@@ -42,8 +42,8 @@ describe("Fetch Nearby Orgs Use Case", () => {
     });
 
     const { orgs } = await sut.execute({
-      userLatitude: -6.794831,
-      userLongitude: -39.297135,
+      orgLatitude: -6.794831,
+      orgLongitude: -39.297135,
     });
 
     expect(orgs).toHaveLength(1);

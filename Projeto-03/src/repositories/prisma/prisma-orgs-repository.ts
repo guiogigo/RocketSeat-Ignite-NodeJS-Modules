@@ -29,6 +29,7 @@ export class PrismaORGsRepository implements ORGRepository {
 
   async findManyNearby({ latitude, longitude }: FindManyNeabyParams) {
     const orgs = await prisma.$queryRaw<ORG[]>`
+    SELECT * FROM orgs
     WHERE ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( latitude ) ) ) ) <= 10
     `;
 

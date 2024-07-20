@@ -17,13 +17,21 @@ export async function authenticateOrgController(
   try {
     const authenticateUseCase = makeAuthenticateUseCase();
 
-    await authenticateUseCase.execute(body);
+    const { org } = await authenticateUseCase.execute(body);
+
+    const token = await res.jwtSign(
+      {},
+      {
+        sign: {
+          sub: org.id,
+        },
+      },
+    );
+    return res.status(200).send({ token });
   } catch (error) {
     if (error instanceof InvalidCredentialsError) {
       res.status(400).send({ message: error.message });
     }
     throw error;
   }
-
-  return res.status(200).send();
 }

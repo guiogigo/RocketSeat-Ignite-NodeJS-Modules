@@ -30,7 +30,7 @@ describe("Create Pet Use Case", () => {
   });
 
   it("should be able to register a new pet", async () => {
-    const { pet } = await sut.excute({
+    const { pet } = await sut.execute({
       name: "Dot",
       age: "5",
       size: "12.2",
