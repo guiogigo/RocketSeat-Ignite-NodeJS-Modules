@@ -64,6 +64,8 @@ GynPass Style App
     > npm i supertest -D
         - Biblioteca para fazer chamadas http sem precisar colocar a aplicação no ar
     > npm i @types/supertest -D
+    > npm i @fastify/cookie
+        - Para guardar o refresh token nos cookies
 
 # Criar Scripts no package:
     "dev": "tsx watch src/server.ts" (Roda a aplicação)
@@ -104,7 +106,7 @@ GynPass Style App
     > npx prisma migrate dev
         - Gera uma migrate
     > npx prisma studio
-        - Abre um site onde voc~e pode modificar os seus bancos de dados manualmente
+        - Abre um site onde você pode modificar os seus bancos de dados manualmente
 
 ## Docker:
     - Plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
