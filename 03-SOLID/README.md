@@ -159,3 +159,13 @@ GynPass Style App
         - Tornar a implementação bem escrita
 
     ==VITEST => Possui um sistema para fake dates ==
+
+## Integração do projeto
+    - CI = Continous Integration
+        > Processo de receber código no projeto e receber de maneira automatizada novas versões do projeto
+        > Github Actions
+            - Pasta .github
+                - Pasta workflows
+                    - Cada arquivo para uma esteira de comando
+    - CD = Continous Deployment
+        > Processo de automaticamente fazer deploy do projeto
