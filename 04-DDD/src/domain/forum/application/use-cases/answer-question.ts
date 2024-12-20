@@ -29,7 +29,7 @@ export class AnswerQuestionUseCase {
     await this.answersRepository.create(answer)
 
     return {
-      answer
+      answer,
     }
   }
 }
